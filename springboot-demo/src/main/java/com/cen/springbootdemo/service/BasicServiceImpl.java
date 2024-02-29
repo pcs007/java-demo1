@@ -22,6 +22,7 @@ public class BasicServiceImpl implements BasicService{
         EmailDomain emailDomain = new EmailDomain();
         emailDomain.setFrom(userContact.getEmail());
         emailDomain.setTo(BasicConstants.EMAIL_TO);
+        emailDomain.setComment(userContact.getComment());
         emailService.sendMail(emailDomain);
 
         basicDao.save(userContact);
